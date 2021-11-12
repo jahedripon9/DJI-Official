@@ -7,6 +7,7 @@ import Banner from './Banner/Banner';
 import Testimonials from './Testimonials/Testimonials';
 import UserGallery from './UserGallery/UserGallery';
 import DJIProductsAdd from '../DJIProductsAdd/DJIProductsAdd';
+import DJIMovicMini from '../Shared/DJIMovicMini/DJIMovicMini';
 
 const Home = () => {
     return (
@@ -14,6 +15,7 @@ const Home = () => {
           <Banner></Banner>
           {/* <MavicSeries></MavicSeries>
           <MavicPro></MavicPro> */}
+          <DJIMovicMini></DJIMovicMini>
           <DJIProducts></DJIProducts>
           <Testimonials></Testimonials>
           <DJIProductsAdd></DJIProductsAdd>

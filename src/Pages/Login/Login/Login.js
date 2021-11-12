@@ -28,7 +28,7 @@ const Login = () => {
             <section class="text-gray-600 body-font">
                 <div class="container px-5 py-10 mx-auto flex flex-wrap items-center">
                 <div class="lg:max-w-lg lg:ml-36 lg:w-full md:w-1/2 w-5/6 mb-10 md:mb-0">
-                    <img class="object-cover object-center rounded" alt="hero" src="https://i.ibb.co/301G7cQ/608d2b66fc4eabc6ec338c207222b232.png"/>
+                    <img class="object-cover object-center rounded" alt="hero" src="https://i.ibb.co/16p9QYj/drone-800-600.gif"/>
                     </div>
                     <div class="lg:w-2/6 md:w-1/2 bg-gray-100 rounded-lg p-8 flex flex-col md:ml-auto w-full mt-10 md:mt-0">
                     <h2 class="text-gray-900 text-lg font-medium title-font mb-5">LOG IN</h2>
@@ -46,7 +46,7 @@ const Login = () => {
                         <button class="text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg" type="submit">Login</button>
                     </form>
                     
-                    <Link to='/register'><button class="text-xs text-gray-500 mt-3">Create Your DJI Account</button></Link>
+                    <Link to='/register'><button class="text-lg text-gray-500 mt-3">Create Your DJI Account</button></Link>
                     </div>
                 </div>
             </section>

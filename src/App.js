@@ -14,6 +14,9 @@ import DJIProductsAdd from './Pages/DJIProductsAdd/DJIProductsAdd';
 import Login from './Pages/Login/Login/Login';
 import Register from './Pages/Login/Register/Register';
 import AuthProvider from './context/AuthProvider/AuthProvider';
+import ExploreProduct from './Pages/ExploreProduct/ExploreProduct';
+import PrivateRoute from './Pages/Login/PrivateRoute/PrivateRoute';
+import DJISupport from './Pages/Shared/ DJISupport/ DJISupport';
 
 
 function App() {
@@ -35,14 +38,20 @@ function App() {
           <Route exact path="/home">
             <Home />
           </Route>
-          <Route exact path="/djiproductsadd">
+          <PrivateRoute exact path="/djiproductsadd">
            <DJIProductsAdd />
-          </Route>
+          </PrivateRoute>
           <Route path="/login">
            <Login />
           </Route>
           <Route path="/register">
            <Register />
+          </Route>
+          <Route path="/exploreproduct">
+           <ExploreProduct />
+          </Route>
+          <Route path="/djiSupport">
+           <DJISupport />
           </Route>
         </Switch>
       <Footer></Footer>

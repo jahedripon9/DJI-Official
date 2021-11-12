@@ -16,7 +16,7 @@ const Header = () => {
                     <nav className="md:ml-auto md:mr-auto flex flex-wrap items-center text-base justify-center">
                     <Link to='/home'><button className="mr-5 hover:text-gray-900">Home</button></Link>
                     <button className="mr-5 hover:text-gray-900">About</button>
-                    <button className="mr-5 hover:text-gray-900">Explore</button>
+                    <Link to='/exploreproduct'><button className="mr-5 hover:text-gray-900">Explore</button></Link>
                     <button className="mr-5 hover:text-gray-900">Support</button>
                     </nav>
                     
@@ -36,11 +36,13 @@ const Header = () => {
                         <div id="sortboxmenu" className="absolute mt-1 right-1 top-full min-w-max shadow rounded opacity-0 bg-gray-300 border border-gray-400 transition delay-75 ease-in-out z-10">
                         <ul className="block text-left text-gray-900 divide-dashed">
                            {
-                               user?.email ?   <li><button onClick={logout} className="block px-3 py-2 hover:bg-gray-200">Logout</button></li>
+                               user?.email ?   <li><button onClick={logout} className="block px-3 py-2 hover:bg-gray-200">Logout
+                               </button> </li>
                                :
-                               <Link to='/login'><li><button className="block px-3 py-2 hover:bg-gray-200">Login</button></li></Link>
+                               <Link to='/login'><li><button className="block px-3 py-2 hover:bg-gray-200">Login</button></li></Link> 
+                               
                            }
-                            <Link to='/register'><li><button className="block px-3 py-2 hover:bg-gray-200">Register</button></li></Link>
+                            {/* <Link to='/register'><li><button className="block px-3 py-2 hover:bg-gray-200">Register</button></li></Link> */}
                             
                         </ul>
                     </div>
