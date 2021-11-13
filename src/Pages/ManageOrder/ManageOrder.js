@@ -24,28 +24,31 @@ const ManageOrder = () => {
 
     console.log(id);
   }
+
+
+  
     return (
-        <div class="container mx-auto px-4">
-            <div class='mx-auto my-14'>
-            <h1 class='border-2 text-3xl font-bold'>Manage All Orders</h1>
-                <table class="table-auto bg-yellow-50 ">
-          <thead class='border-2'>
-          <tr class="bg-blue-200 border-2">
+        <div className="container mx-auto px-4">
+            <div className='mx-auto my-14'>
+            <h1 className='border-2 text-3xl font-bold'>Manage All Orders</h1>
+                <table className="table-auto bg-yellow-50 ">
+          <thead className='border-2'>
+          <tr className="bg-blue-200 border-2">
               <th>#</th>
-              <th class='border-2'>Service Title</th>
-              <th class='border-2'>Event description</th>
-              <th class='border-2'>Image Link</th>
-              <th class='border-2'>Status</th>
-              <th class='border-2'>Action</th>
+              <th className='border-2'>Service Title</th>
+              <th className='border-2'>Event description</th>
+              <th className='border-2'>Image Link</th>
+              <th className='border-2'>Status</th>
+              <th className='border-2'>Action</th>
             </tr>
           </thead>
           {orders?.map((product, index) => (
             <tbody>
-              <tr class='border-2'>
-                <td class='border-2'>{index}</td>
-                <td class='border-2'>{product.name}</td>
-                <td class='border-2'>{product.description}</td>
-                <td class='border-2'>{product.image}</td>
+              <tr className='border-2'>
+                <td className='border-2'>{index}</td>
+                <td className='border-2'>{product.name}</td>
+                <td className='border-2'>{product.description}</td>
+                <td className='border-2'>{product.image}</td>
                 <td>
                   <input
                     onChange={handleStatus}

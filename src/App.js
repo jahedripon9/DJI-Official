@@ -21,6 +21,7 @@ import Deshboard from './Pages/Deshboard/Deshboard/Deshboard';
 import Payment from './Pages/Deshboard/Payment/Payment';
 import AboutUs from './Pages/Shared/AboutUs/AboutUs';
 import ContactUs from './Pages/Shared/ContactUs/ContactUs';
+import WelcomePage from './Pages/WelcomePage/WelcomePage';
 
 
 
@@ -54,6 +55,9 @@ function App() {
           </Route>
           <Route path="/aboutus">
            <AboutUs />
+          </Route>
+          <Route path="/welcome">
+           <WelcomePage />
           </Route>
           <Route path="/contact">
            <ContactUs />

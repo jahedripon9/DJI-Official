@@ -55,7 +55,7 @@ const MyOrder = () => {
         </div>
       </div>
     </div>
-        </div>
+    </div>
     );
 };
 

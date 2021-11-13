@@ -18,9 +18,9 @@ const Review = () => {
       })
 };
     return (
-        <div class="container mx-auto px-4">
+        <div className="container mx-auto px-4">
             
-            <div class='review-product pb-16 text-red-500'>
+            <div className='review-product pb-16 text-red-500'>
             <h2 className='font-bold text-5xl my-5 underline'>Review</h2>
             <form onSubmit={handleSubmit(onSubmit)} className='text-2xl  text-center mb-28'>
                 <input {...register("name", { required: true, maxLength: 20 })} placeholder='Name'  className='text-left '/>

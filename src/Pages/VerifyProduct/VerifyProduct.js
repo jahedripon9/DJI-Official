@@ -15,7 +15,7 @@ const VerifyProduct = () => {
       .then(res => res.json())
       .then(data => setProduct(data))
       
-  }, []);
+  }, [verifyId]);
   
 
 

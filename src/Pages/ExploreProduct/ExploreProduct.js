@@ -11,7 +11,7 @@ const ExploreProduct = () => {
         .then(data => setProducts(data));
     },[])
     return (
-        <div class="container mx-auto px-4">
+        <div className="container mx-auto px-4">
             <Header></Header>
   
                 {

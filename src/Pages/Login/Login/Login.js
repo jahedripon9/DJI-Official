@@ -36,7 +36,7 @@ const Login = () => {
                     <h2 className="text-gray-900 text-lg font-medium title-font mb-5">LOG IN</h2>
                     <form  onSubmit={handleLoginSubmit}>
                     <div className="relative mb-4">
-                        <label for="email" type="email" className="leading-7 text-sm text-gray-600">Email</label>
+                        <label htmlFor="email" type="email" className="leading-7 text-sm text-gray-600">Email</label>
                         <input type="email" onBlur={handleOnBlur}  name="email" className="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"/>
                     </div>
                     <div className="relative mb-4">

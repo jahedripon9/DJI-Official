@@ -6,11 +6,8 @@ import ProductSupport from '../Shared/ProductSupport/ProductSupport';
 import Banner from './Banner/Banner';
 
 import UserGallery from './UserGallery/UserGallery';
-import DJIProductsAdd from '../DJIProductsAdd/DJIProductsAdd';
 import DJIMovicMini from '../Shared/DJIMovicMini/DJIMovicMini';
 import Header from '../Shared/Header/Header';
-import Review from '../Review/Review';
-import Testimonial from './Testimonial/Testimonial';
 import Testimonials from './Testimonials/Testimonials';
 
 const Home = () => {
@@ -18,13 +15,11 @@ const Home = () => {
         <div>
           <Header></Header>
           <Banner></Banner>
-          {/* <MavicSeries></MavicSeries>
-          <MavicPro></MavicPro> */}
+          {/* <MavicSeries></MavicSeries> */}
           <DJIMovicMini></DJIMovicMini>
           <DJIProducts></DJIProducts>
+          <MavicPro></MavicPro>
           <Testimonials></Testimonials>
-          {/* <Review></Review> */}
-          {/* <DJIProductsAdd></DJIProductsAdd> */}
           <UserGallery></UserGallery>
           <ProductSupport></ProductSupport>
         </div>
