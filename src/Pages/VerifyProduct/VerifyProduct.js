@@ -43,12 +43,12 @@ const VerifyProduct = () => {
                     <div className="">
                     <img className="w-52 mx-auto" src={product.img} alt="" />
                     </div>
-                    <h1 className="text-danger font-bold">Name:{product.name}</h1>
-                    <h1 className="text-danger font-bold">Price:${product.price}</h1>
-                    <h1 className="text-danger font-bold">Description:{product.description}</h1>
-                </div>
-                <div className="col-md-6 verify-product bg-blue-100 bg-opacity-50 ">
-                    <h2 className="text-red-500 text-3xl font-bold">Place Order Information</h2>
+                    <h1 className="text-4xl font-bold">Name:{product.name}</h1>
+                    <h1 className="text-3xl text-red-500 font-bold">Price:${product.price}</h1>
+                    <h1 className="text-1xl mx-auto font-bold">Description:{product.description}</h1>
+                </div> <br /><br />
+                <div className=" mt-10 verify-product bg-blue-100 bg-opacity-50 ">
+                    <h2 className="text-red-500 text-3xl py-10 font-bold">Place Order Information</h2>
                     <form onSubmit={handleSubmit(onSubmit)} className='text-2xl  text-center mb-28'>
                     <input {...register("name", { required: true, maxLength: 20 })}
                         defaultValue={product.name}
