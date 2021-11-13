@@ -1,4 +1,3 @@
-import { Button, TextField, Alert } from '@mui/material';
 import React, { useState } from 'react';
 import useAuth from '../../../../hooks/useAuth';
 
@@ -12,7 +11,7 @@ const MakeAdmin = () => {
     }
     const handleAdminSubmit = e => {
         const user = { email };
-        fetch('https://thawing-retreat-53148.herokuapp.com/users/admin', {
+        fetch('http://localhost:5000/users/admin', {
             method: 'PUT',
             headers: {
                 'authorization': `Bearer ${token}`,
@@ -31,20 +30,23 @@ const MakeAdmin = () => {
         e.preventDefault()
     }
     return (
-        <div>
+        <>
             <h2>Make an Admin</h2>
             <form onSubmit={handleAdminSubmit}>
-                <TextField
-                    sx={{ width: '50%' }}
-                    label="Email"
-                    type="email"
-                    onBlur={handleOnBlur}
-                    variant="standard" />
-                <Button type="submit" variant="contained">Make Admin</Button>
+            <label for="email" class="leading-7 text-sm text-gray-600">Email</label>
+            <input type="email" name="email" onBlur={handleOnBlur} class="w-full bg-gray-100 rounded border bg-opacity-50 border-gray-300 focus:ring-2 focus:ring-indigo-200 focus:bg-transparent focus:border-indigo-500 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"/>
+    
+            <button type="submit" class="inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg">Make Admin</button>
             </form>
-            {success && <Alert severity="success">Made Admin successfully!</Alert>}
-        </div>
+            {success && <span severity="success">Made Admin successfully!</span>}
+
+            
+          
+    
+
+        </>
     );
 };
 
 export default MakeAdmin;
+

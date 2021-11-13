@@ -5,7 +5,7 @@ const DJIProducts = () => {
     
         const [products, setProducts]= useState([])
         useEffect(()=>{
-            fetch('http://localhost:5000/djiproducts')
+            fetch('https://limitless-crag-70753.herokuapp.com/djiproducts')
             .then(rse => rse.json())
             .then(data => setProducts(data));
         },[])
@@ -18,7 +18,7 @@ const DJIProducts = () => {
                 </div>
                 <div className='item-container'>
             {
-                    products.map(product => <DJIProduct
+                    products.slice(0,6).map(product => <DJIProduct
                     key={product._id}
                     product={product}
                     ></DJIProduct>)

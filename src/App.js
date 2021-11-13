@@ -7,8 +7,6 @@ import {
 import Home from './Pages/Home/Home';
 import About from './Pages/Home/About/About';
 import Users from './Pages/Home/Users/Users';
-
-import Header from './Pages/Shared/Header/Header';
 import Footer from './Pages/Shared/Footer/Footer';
 import DJIProductsAdd from './Pages/DJIProductsAdd/DJIProductsAdd';
 import Login from './Pages/Login/Login/Login';
@@ -17,6 +15,13 @@ import AuthProvider from './context/AuthProvider/AuthProvider';
 import ExploreProduct from './Pages/ExploreProduct/ExploreProduct';
 import PrivateRoute from './Pages/Login/PrivateRoute/PrivateRoute';
 import DJISupport from './Pages/Shared/ DJISupport/ DJISupport';
+import VerifyProduct from './Pages/VerifyProduct/VerifyProduct';
+import MyOrder from './Pages/MyOrder/MyOrder';
+import Deshboard from './Pages/Deshboard/Deshboard/Deshboard';
+import Payment from './Pages/Deshboard/Payment/Payment';
+import AboutUs from './Pages/Shared/AboutUs/AboutUs';
+import ContactUs from './Pages/Shared/ContactUs/ContactUs';
+
 
 
 function App() {
@@ -24,7 +29,7 @@ function App() {
     <div className="App">
     <AuthProvider>
     <Router>
-        <Header></Header>
+        
         <Switch>
           <Route exact path="/about">
             <About />
@@ -47,12 +52,30 @@ function App() {
           <Route path="/register">
            <Register />
           </Route>
+          <Route path="/aboutus">
+           <AboutUs />
+          </Route>
+          <Route path="/contact">
+           <ContactUs />
+          </Route>
           <Route path="/exploreproduct">
            <ExploreProduct />
           </Route>
+          <PrivateRoute  path="/djiproduct/:verifyId">
+              <VerifyProduct></VerifyProduct>
+            </PrivateRoute>
+          <PrivateRoute  path="/myorder">
+              <MyOrder></MyOrder>
+            </PrivateRoute>
           <Route path="/djiSupport">
            <DJISupport />
           </Route>
+          <PrivateRoute path="/deshboard">
+           <Deshboard />
+          </PrivateRoute>
+          <PrivateRoute path="/payment">
+           <Payment />
+          </PrivateRoute>
         </Switch>
       <Footer></Footer>
     </Router>

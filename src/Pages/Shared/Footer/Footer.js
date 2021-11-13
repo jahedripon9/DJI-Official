@@ -1,12 +1,13 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
     return (
         <div>
             <div class="container mx-auto">
             <footer class="text-white body-font bg-gray-800">
-                    <div class="container px-5 py-24 mx-auto flex md:items-center lg:items-start md:flex-row md:flex-nowrap flex-wrap flex-col">
-                        <div class="w-64 flex-shrink-0 md:mx-0 mx-auto text-center md:text-left">
+                    <div class="container px-5 py-10 mx-auto flex md:items-center lg:items-start md:flex-row md:flex-nowrap flex-wrap flex-col">
+                        <div class="w-48 flex-shrink-0 md:mx-0 mx-auto text-center md:text-left">
                         <a class="flex title-font font-medium items-center md:justify-start justify-center text-gray-900">
                         <img className="w-36" src="https://i.ibb.co/qMzsrTC/d56cca8061070c505ea5130b9dadcdc9.png" alt="" />
                            
@@ -15,71 +16,39 @@ const Footer = () => {
                         </div>
                         <div class="flex-grow flex flex-wrap md:pl-20 -mb-10 md:mt-0 mt-10 md:text-left text-center">
                         <div class="lg:w-1/4 md:w-1/2 w-full px-4">
-                            <h2 class="title-font font-medium text-white tracking-widest text-sm mb-3">CATEGORIES</h2>
+                            
                             <nav class="list-none mb-10">
                             <li>
-                                <a class="text-white hover:text-gray-800">First Link</a>
+                                <Link to='/home'><button class="text-white hover:text-white">Home</button></Link>
                             </li>
-                            <li>
-                                <a class="text-white hover:text-gray-800">Second Link</a>
-                            </li>
-                            <li>
-                                <a class="text-white hover:text-gray-800">Third Link</a>
-                            </li>
-                            <li>
-                                <a class="text-white hover:text-gray-800">Fourth Link</a>
-                            </li>
+                            
                             </nav>
                         </div>
                         <div class="lg:w-1/4 md:w-1/2 w-full px-4">
-                            <h2 class="title-font font-medium text-whitetracking-widest text-sm mb-3">CATEGORIES</h2>
+                            
                             <nav class="list-none mb-10">
                             <li>
-                                <a class="text-white hover:text-gray-800">First Link</a>
+                            <Link to='/aboutus'><button class="text-white hover:text-white">About Us</button></Link>
                             </li>
-                            <li>
-                                <a class="text-white hover:text-gray-800">Second Link</a>
-                            </li>
-                            <li>
-                                <a class="text-white hover:text-gray-800">Third Link</a>
-                            </li>
-                            <li>
-                                <a class="text-white hover:text-gray-800">Fourth Link</a>
-                            </li>
+                            
                             </nav>
                         </div>
                         <div class="lg:w-1/4 md:w-1/2 w-full px-4">
-                            <h2 class="title-font font-medium text-whitetracking-widest text-sm mb-3">CATEGORIES</h2>
+                            
                             <nav class="list-none mb-10">
                             <li>
-                                <a class="text-white hover:text-gray-800">First Link</a>
+                            <Link to='/deshboard'><button class="text-white hover:text-white">Dashboard</button></Link>
                             </li>
-                            <li>
-                                <a class="text-white hover:text-gray-800">Second Link</a>
-                            </li>
-                            <li>
-                                <a class="text-white hover:text-gray-800">Third Link</a>
-                            </li>
-                            <li>
-                                <a class="text-white hover:text-gray-800">Fourth Link</a>
-                            </li>
+                           
                             </nav>
                         </div>
                         <div class="lg:w-1/4 md:w-1/2 w-full px-4">
-                            <h2 class="title-font font-medium text-whitetracking-widest text-sm mb-3">CATEGORIES</h2>
+                            
                             <nav class="list-none mb-10">
                             <li>
-                                <a class="text-white hover:text-gray-800">First Link</a>
+                            <Link to='/contact'><button class="text-white hover:text-white">Contact Us</button></Link>
                             </li>
-                            <li>
-                                <a class="text-white hover:text-gray-800">Second Link</a>
-                            </li>
-                            <li>
-                                <a class="text-white hover:text-gray-800">Third Link</a>
-                            </li>
-                            <li>
-                                <a class="text-white hover:text-gray-800">Fourth Link</a>
-                            </li>
+                          
                             </nav>
                         </div>
                         </div>

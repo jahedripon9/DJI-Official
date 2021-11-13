@@ -1,164 +1,87 @@
-import * as React from 'react';
-import PropTypes from 'prop-types';
-import AppBar from '@mui/material/AppBar';
-import Box from '@mui/material/Box';
-import CssBaseline from '@mui/material/CssBaseline';
-import Divider from '@mui/material/Divider';
-import Drawer from '@mui/material/Drawer';
-import IconButton from '@mui/material/IconButton';
-import InboxIcon from '@mui/icons-material/MoveToInbox';
-import List from '@mui/material/List';
-import ListItem from '@mui/material/ListItem';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import ListItemText from '@mui/material/ListItemText';
-import MailIcon from '@mui/icons-material/Mail';
-import MenuIcon from '@mui/icons-material/Menu';
-import Toolbar from '@mui/material/Toolbar';
-import Typography from '@mui/material/Typography';
-import DeshboardHome from '../DeshboardHome/DeshboardHome';
-import AdDoctor from '../AdDoctor/AdDoctor';
-
+import React from 'react';
+import { Link } from 'react-router-dom';
+import MyOrder from '../../MyOrder/MyOrder';
+import Review from "../../Review/Review";
 import {
-  BrowserRouter as Router,
   Switch,
   Route,
-  Link,
-  useParams,
   useRouteMatch
 } from "react-router-dom";
-import MakeAdmin from './MakeAdmin/MakeAdmin';
-import { Button } from '@mui/material';
 import useAuth from '../../../hooks/useAuth';
+import DJIProductsAdd from '../../DJIProductsAdd/DJIProductsAdd';
+import MakeAdmin from './MakeAdmin/MakeAdmin';
 import AdminRoute from '../../Login/Login/AdminRoute/AdminRoute';
+import ManageOrder from '../../ManageOrder/ManageOrder';
 
-
-const drawerWidth = 240;
-
-function Deshboard(props) {
-  const { window } = props;
-  const [mobileOpen, setMobileOpen] = React.useState(false);
+const Deshboard = () => {
+  
+  
   let { path, url } = useRouteMatch();
-  const {admin} = useAuth();
+  const { admin, logout } = useAuth();
 
-  const handleDrawerToggle = () => {
-    setMobileOpen(!mobileOpen);
-  };
-
-  const drawer = (
-    <div>
-      <Toolbar />
-      <Divider /> <br />
-      <Link to='/appointment' style={{textDecoration: 'none'}}> <Button variant="contained">Appointment</Button></Link> <br /> <br />
-      <Link to={`${url}`}style={{textDecoration: 'none'}}><Button variant="contained">Deshboard</Button></Link> <br /> <br />
-
-      {admin &&
-       <Box>
-      <Link to={`${url}/makeAdmin`}style={{textDecoration: 'none'}}>  <Button variant="contained">Make Admin</Button></Link><br /> <br />
-
-      <Link to={`${url}/adDoctor`}style={{textDecoration: 'none'}}> <Button variant="contained">Ad Doctor</Button></Link> <br /><br />  
-      </Box>}
-      
-      <Divider />
-      <List>
-        {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
-          <ListItem button key={text}>
-            <ListItemIcon>
-              {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-            </ListItemIcon>
-            <ListItemText primary={text} />
-          </ListItem>
-        ))}
-      </List>
-    </div>
-  );
-
-  const container = window !== undefined ? () => window().document.body : undefined;
-
+  
+  
   return (
-    <Box sx={{ display: 'flex' }}>
-      <CssBaseline />
-      <AppBar
-        position="fixed"
-        sx={{
-          width: { sm: `calc(100% - ${drawerWidth}px)` },
-          ml: { sm: `${drawerWidth}px` },
-        }}
-      >
-        <Toolbar>
-          <IconButton
-            color="inherit"
-            aria-label="open drawer"
-            edge="start"
-            onClick={handleDrawerToggle}
-            sx={{ mr: 2, display: { sm: 'none' } }}
-          >
-            <MenuIcon />
-          </IconButton>
-          <Typography variant="h6" noWrap component="div">
-            Deshboard
-          </Typography>
-         
-        </Toolbar>
-      </AppBar>
-      <Box
-        component="nav"
-        sx={{ width: { sm: drawerWidth }, flexShrink: { sm: 0 } }}
-        aria-label="mailbox folders"
-      >
-        {/* The implementation can be swapped with js to avoid SEO duplication of links. */}
-        <Drawer
-          container={container}
-          variant="temporary"
-          open={mobileOpen}
-          onClose={handleDrawerToggle}
-          ModalProps={{
-            keepMounted: true, // Better open performance on mobile.
-          }}
-          sx={{
-            display: { xs: 'block', sm: 'none' },
-            '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth },
-          }}
-        >
-          {drawer}
-        </Drawer>
-        <Drawer
-          variant="permanent"
-          sx={{
-            display: { xs: 'none', sm: 'block' },
-            '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth },
-          }}
-          open
-        >
-          {drawer}
-        </Drawer>
-      </Box>
-      <Box
-        component="main"
-        sx={{ flexGrow: 1, p: 3, width: { sm: `calc(100% - ${drawerWidth}px)` } }}
-      >
-        <Toolbar />
+    <div className="container mx-auto px-4">
+      <header className="text-gray-600 body-font">
+          <div className="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
+            <span className="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
+            <Link to="/home"><button className="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
+                    <img className="w-20" src="https://i.ibb.co/pvnzkNc/logo.png" alt="" /></button></Link>
+              <span className="ml-3 text-xl">Deshboard</span>
+            </span>
+            <nav className="md:mr-auto md:ml-4 md:py-1 md:pl-4 md:border-l md:border-gray-400	flex flex-wrap items-center text-base justify-center">
+              <Link to='/home'><button className="mr-5 hover:text-gray-900">Home</button></Link>
+              <Link to='/payment'><button className="mr-5 hover:text-gray-900">Payment</button></Link>
+              
+              <Link to='/myorder'><button className="mr-5 hover:text-gray-900">My Order</button></Link>
+              <Link to={`${url}/review`}><button className="mr-5 hover:text-gray-900">Review</button></Link>
+
+            { admin &&
+
+            <span>
+              <Link to={`${url}/makeAdmin`}><button className="mr-5 hover:text-gray-900">Make Admin</button></Link>
+                          
+              <Link to={`${url}/djiproductsadd`}><button className="mr-5 hover:text-gray-900">DJI Product Add</button>
+              </Link>
+              <Link to={`${url}/manageorder`}><button className="mr-5 hover:text-gray-900">Manage Orders</button>
+              </Link>
+            </span>
+
+            }
+              
+            </nav>
+            <button onClick={logout} className="inline-flex items-center bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0">Logout
+              <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" className="w-4 h-4 ml-1" viewBox="0 0 24 24">
+                <path d="M5 12h14M12 5l7 7-7 7"></path>
+              </svg>
+            </button>
+          </div>
+        </header>
+
+        <div>
+          
         <Switch>
         <Route exact path={path}>
-          <DeshboardHome></DeshboardHome>
+          {/* <DeshboardHome></DeshboardHome> */}
         </Route>
         <AdminRoute path={`${path}/makeAdmin`}>
           <MakeAdmin></MakeAdmin>
         </AdminRoute>
-        <AdminRoute path={`${path}/adDoctor`}>
-          <AdDoctor></AdDoctor>
+        <AdminRoute path={`${path}/djiproductsadd`}>
+          <DJIProductsAdd></DJIProductsAdd>
         </AdminRoute>
+        <AdminRoute path={`${path}/manageorder`}>
+          <ManageOrder></ManageOrder>
+        </AdminRoute>
+        <Route exact path={`${path}/review`}>
+                <Review></Review>
+        </Route>
       </Switch>
-      </Box>
-    </Box>
+        </div>
+      {/* <MyOrder></MyOrder> */}
+    </div>
   );
-}
-
-Deshboard.propTypes = {
-  /**
-   * Injected by the documentation to work in an iframe.
-   * You won't need it on your project.
-   */
-  window: PropTypes.func,
 };
 
 export default Deshboard;

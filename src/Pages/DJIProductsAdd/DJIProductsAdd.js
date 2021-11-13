@@ -17,7 +17,7 @@ const DJIProductsAdd = () => {
         })
     }
     return (
-        <div class="container mx-auto px-4">
+        <div className="container mx-auto px-4">
                  <img className='lg:w-80 rounded-full mx-auto' src="https://i.ibb.co/NThqJKT/590-320-2x.jpg" alt="" />
             <div className='add-product pb-16 text-red-500 '>
                 <h2 className='font-bold text-5xl my-5 underline'>Add DJI Official Products</h2>

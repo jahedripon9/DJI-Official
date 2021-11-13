@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const DJIProduct = ({product}) => {
     const { _id, name, price, description, img } = product;
@@ -16,8 +17,13 @@ const DJIProduct = ({product}) => {
                     <h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900">{name}</h1>
                     <p class="mb-8 leading-relaxed">{description}</p>
                     <div class="flex justify-center">
-                        <button class="inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg">Buy Now</button>
-                        <button class="ml-4 inline-flex text-gray-700 bg-gray-100 border-0 py-2 px-6 focus:outline-none hover:bg-gray-200 rounded text-lg">Learn More</button>
+                    <Link to={`/djiproduct/${_id}`}><button className="ml-4 inline-flex text-gray-700 bg-gray-200 border-0 py-2 px-6 focus:outline-none hover:bg-gray-200 rounded text-lg">Buy Now
+                  {/* <svg className="w-4 h-4 ml-2" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2" fill="none" strokeLinejoin="round" strokeLinejoin="round">
+                    <path d="M5 12h14"></path>
+                    <path d="M12 5l7 7-7 7"></path>
+                  </svg> */}
+                </button></Link>
+                        <button class="ml-4 inline-flex text-gray-700 bg-gray-100 border-0 py-2 px-6 focus:outline-none hover:bg-gray-200 rounded text-lg font-bold text-red-500">${price}</button>
                     </div>
                     </div>
                     <div class="lg:max-w-lg lg:w-full md:w-1/2 w-5/6">
