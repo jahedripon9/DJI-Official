@@ -22,6 +22,7 @@ import Payment from './Pages/Deshboard/Payment/Payment';
 import AboutUs from './Pages/Shared/AboutUs/AboutUs';
 import ContactUs from './Pages/Shared/ContactUs/ContactUs';
 import WelcomePage from './Pages/WelcomePage/WelcomePage';
+import NotFound from './Pages/NotFound/NotFound';
 
 
 
@@ -80,6 +81,9 @@ function App() {
           <PrivateRoute path="/payment">
            <Payment />
           </PrivateRoute>
+          <Route exact path="*">
+           <NotFound />
+          </Route>
         </Switch>
       <Footer></Footer>
     </Router>
