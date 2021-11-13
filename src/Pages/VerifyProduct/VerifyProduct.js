@@ -11,7 +11,7 @@ const VerifyProduct = () => {
   // const email = useAuth();
 
   useEffect(() => {
-    fetch(`http://localhost:5000/djiproducts/${verifyId}`)
+    fetch(`https://limitless-crag-70753.herokuapp.com/djiproducts/${verifyId}`)
       .then(res => res.json())
       .then(data => setProduct(data))
       
@@ -24,7 +24,7 @@ const VerifyProduct = () => {
 
     data.email = email;
 
-    fetch("http://localhost:5000/confirmOrder", {
+    fetch("https://limitless-crag-70753.herokuapp.com/confirmOrder", {
       method: "POST",
       headers: { "content-type": "application/json" },
       body: JSON.stringify(data),

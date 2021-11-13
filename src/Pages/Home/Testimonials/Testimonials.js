@@ -5,7 +5,7 @@ const Testimonials = () => {
 
     const [reviews, setReviews]= useState([])
         useEffect(()=>{
-            fetch('http://localhost:5000/addReview')
+            fetch('https://limitless-crag-70753.herokuapp.com/addReview')
             .then(rse => rse.json())
             .then(data => setReviews(data));
         },[])

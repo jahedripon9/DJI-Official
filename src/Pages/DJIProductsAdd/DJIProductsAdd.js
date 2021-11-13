@@ -7,7 +7,7 @@ const DJIProductsAdd = () => {
     const { register, handleSubmit, reset } = useForm();
     const onSubmit = data => {
         console.log(data)
-        axios.post('http://localhost:5000/djiproducts', data)
+        axios.post('https://limitless-crag-70753.herokuapp.com/djiproducts', data)
         .then(res => {
             if(res.data.insertedId){
                 alert('Successfully DJI Official Items')

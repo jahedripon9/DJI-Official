@@ -10,13 +10,13 @@ const ManageOrder = () => {
   };
   console.log(status);
   useEffect(() => {
-    fetch("http://localhost:5000/allOrders")
+    fetch("https://limitless-crag-70753.herokuapp.com/allOrders")
       .then((res) => res.json())
       .then((data) => setOrders(data));
   }, []);
 
   const handeleUpdate = (id) => {
-    fetch(`http://localhost:5000/status/${id}`, {
+    fetch(`https://limitless-crag-70753.herokuapp.com/status/${id}`, {
       method: "PUT",
       headers: { "content-type": "application/json" },
       body: JSON.stringify({ status }),

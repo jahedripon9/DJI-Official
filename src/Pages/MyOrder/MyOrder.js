@@ -7,13 +7,13 @@ const MyOrder = () => {
   const [control, setControl] = useState(false);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/myOrders/${email}`)
+    fetch(`https://limitless-crag-70753.herokuapp.com/myOrders/${email}`)
       .then((res) => res.json())
       .then((data) => setOrders(data));
   }, [control]);
 
   const handleDelete = (id) => {
-    fetch(`http://localhost:5000/deleteOrder/${id}`, {
+    fetch(`https://limitless-crag-70753.herokuapp.com/deleteOrder/${id}`, {
       method: "DELETE",
     })
       .then((res) => res.json())

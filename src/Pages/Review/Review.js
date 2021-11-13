@@ -8,7 +8,7 @@ const Review = () => {
   const { register, handleSubmit, reset } = useForm();
   const onSubmit = data => {
       console.log(data)
-      axios.post('http://localhost:5000/addReview', data)
+      axios.post('https://limitless-crag-70753.herokuapp.com/addReview', data)
       .then(res => {
           if(res.data.insertedId){
               alert('Thank you! for Review')
