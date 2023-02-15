@@ -4,22 +4,22 @@ import Header from '../Shared/Header/Header';
 
 
 const ExploreProduct = () => {
-    const [products, setProducts]= useState([])
-    useEffect(()=>{
-        fetch('https://limitless-crag-70753.herokuapp.com/djiproducts')
-        .then(rse => rse.json())
-        .then(data => setProducts(data));
-    },[])
+    const [products, setProducts] = useState([])
+    useEffect(() => {
+        fetch('https://dji-server.vercel.app/djiproducts')
+            .then(rse => rse.json())
+            .then(data => setProducts(data));
+    }, [])
     return (
         <div className="container mx-auto px-4">
             <Header></Header>
-  
-                {
-                    products.map(product => <DJIProducts
+
+            {
+                products.map(product => <DJIProducts
                     key={product.id}
                     product={product}
-                    ></DJIProducts>)
-                }
+                ></DJIProducts>)
+            }
 
         </div>
     );

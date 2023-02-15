@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 
 const ManageOrder = () => {
-    const [orders, setOrders] = useState([]);
+  const [orders, setOrders] = useState([]);
 
   const [status, setStatus] = useState("");
 
@@ -10,13 +10,13 @@ const ManageOrder = () => {
   };
   console.log(status);
   useEffect(() => {
-    fetch("https://limitless-crag-70753.herokuapp.com/allOrders")
+    fetch("https://dji-server.vercel.app/allOrders")
       .then((res) => res.json())
       .then((data) => setOrders(data));
   }, []);
 
   const handeleUpdate = (id) => {
-    fetch(`https://limitless-crag-70753.herokuapp.com/status/${id}`, {
+    fetch(`https://dji-server.vercel.app/status/${id}`, {
       method: "PUT",
       headers: { "content-type": "application/json" },
       body: JSON.stringify({ status }),
@@ -26,14 +26,14 @@ const ManageOrder = () => {
   }
 
 
-  
-    return (
-        <div className="container mx-auto px-4">
-            <div className='mx-auto my-14'>
-            <h1 className='border-2 text-3xl font-bold'>Manage All Orders</h1>
-                <table className="table-auto bg-yellow-50 ">
+
+  return (
+    <div className="container mx-auto px-4">
+      <div className='mx-auto my-14'>
+        <h1 className='border-2 text-3xl font-bold'>Manage All Orders</h1>
+        <table className="table-auto bg-yellow-50 ">
           <thead className='border-2'>
-          <tr className="bg-blue-200 border-2">
+            <tr className="bg-blue-200 border-2">
               <th>#</th>
               <th className='border-2'>Service Title</th>
               <th className='border-2'>Event description</th>
@@ -67,9 +67,9 @@ const ManageOrder = () => {
             </tbody>
           ))}
         </table>
-            </div>
-        </div>
-    );
+      </div>
+    </div>
+  );
 };
 
 export default ManageOrder;
